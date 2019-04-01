@@ -1,5 +1,8 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+{{#each this.model.foos as |foo|}}
+  <br><br>
+  <TemplateOnly @foo={{foo}} />
 
-{{outlet}}
+  <button {{on 'click' this.remove foo}}>
+    Remove
+  </button>
+{{/each}}
